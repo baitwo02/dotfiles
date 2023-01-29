@@ -79,7 +79,7 @@ cmp.setup({
   })
 })
 
--- 这是干啥的我目前也不知道, 官方配置上的, 应该是 git sign 相关的东西
+-- 这是干啥的我目前也不知道, 官方配置上的
 -- cmp.setup.filetype("gitcommit", {
 --     sources = cmp.config.sources({
 --         { name = "cmp_git" },
