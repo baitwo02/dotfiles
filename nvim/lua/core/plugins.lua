@@ -57,8 +57,8 @@ local plugins = {
   },
   {
     -- snippet 补全
-    "SirVer/ultisnips",
-    "quangnguyen30192/cmp-nvim-ultisnips",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
     lazy = false,
   },
   {
@@ -89,17 +89,17 @@ local plugins = {
     -- 搜索的插件
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-    dependencies = { "nvim-telescope/telescope.nvim", },
+    dependencies = { "nvim-telescope/telescope.nvim" },
     lazy = false,
   },
 }
 
-local user_plugins = require("user.plugins")
 
-for _, v in pairs(user_plugins) do
-  plugins[#plugins + 1] = v
+local user_plugins_ok, user_plugins = pcall(require, "user.plugins")
+if user_plugins_ok then
+  for _, v in pairs(user_plugins) do
+    plugins[#plugins + 1] = v
+  end
 end
 
 lazy.setup(plugins)
-
-
