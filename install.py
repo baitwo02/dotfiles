@@ -13,6 +13,7 @@ config_folders = [
     "alacritty",
     "tmux",
     "kwalletrc",
+    "hypr",
 ]
 for config_folder in config_folders:
     os.system("rm -rf %s/%s" % (path_config, config_folder))
