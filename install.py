@@ -16,6 +16,7 @@ config_folders = [
     "hypr",
     "waybar",
     "wofi",
+    "nvim",
 ]
 for config_folder in config_folders:
     os.system("rm -rf %s/%s" % (path_config, config_folder))
