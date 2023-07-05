@@ -94,8 +94,8 @@ ls.add_snippets("all", {
 	s({ trig = "mm", snippetType = "autosnippet"}, { t({ "$$" }), i(1), t({ "$$" }) }, {}),
 	s(
 		{
-			trig = "ff",
-      snippetType = "autosnippet",
+			trig = [[//]],
+      snippetType = [[autosnippet]],
 			condition = in_math,
 			show_condition = in_math,
 		},
@@ -152,6 +152,22 @@ ls.add_snippets("all", {
 		},
 		fmt(
       [[\beta]],
+			{},
+			{ delimiters = "<>" }
+		),
+		{}
+	),
+	s(
+		{
+			trig = ";g",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+			condition = in_math,
+			show_condition = in_math,
+		},
+		fmt(
+      [[\gamma]],
 			{},
 			{ delimiters = "<>" }
 		),

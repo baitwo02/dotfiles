@@ -1,5 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local compare = require("cmp.config.compare")
+
 local has_words_before = function()
 	unpack = unpack or table.unpack
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -28,7 +30,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s",}),
+		end, { "i", "s" }),
 
 		["<s-tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -36,7 +38,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s",}),
+		end, { "i", "s" }),
 
 		["jj"] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(1) then
@@ -44,7 +46,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s",}),
+		end, { "i", "s" }),
 
 		["kk"] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(-1) then
@@ -52,7 +54,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s",}),
+		end, { "i", "s" }),
 
 		["<c-b>"] = cmp.mapping.scroll_docs(-4),
 		["<c-f>"] = cmp.mapping.scroll_docs(4),
@@ -65,6 +67,18 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
+	sorting = {
+		comparators = {
+			compare.sort_text,
+			compare.offset,
+			compare.exact,
+			compare.score,
+			compare.recently_used,
+			compare.kind,
+			compare.length,
+			compare.order,
+		},
+	},
 })
 
 -- 配置git相关, 需要下载对应插件

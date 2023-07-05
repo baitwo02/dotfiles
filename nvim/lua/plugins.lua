@@ -98,20 +98,30 @@ local plugins = {
 		-- 主题插件
 		"EdenEast/nightfox.nvim",
 		lazy = false,
-	  },
-	  {
+	},
+	{
 		-- markdown preview
 		"iamcco/markdown-preview.nvim",
 		lazy = true,
 		build = "cd app && npm install",
-		ft = { "markdown", }
-	  },
-	  {
+		ft = { "markdown" },
+	},
+	{
 		-- latex
 		"lervag/vimtex",
 		lazy = true,
-		ft = { "markdown", "tex"}
-	  },
+		ft = { "markdown", "tex" },
+	},
+	{
+		-- 中文输入法
+		"wlh320/rime-ls",
+		lazy = true,
+	},
+	{
+    -- 状态栏
+    "nvim-lualine/lualine.nvim",
+    lazy=false,
+  },
 }
 
 lazy.setup(plugins)
