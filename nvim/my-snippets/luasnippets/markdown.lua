@@ -173,6 +173,78 @@ ls.add_snippets("all", {
 		),
 		{}
 	),
+  s(
+    {
+      trig = [[;1]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[# ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
+  s(
+    {
+      trig = [[;2]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[## ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
+  s(
+    {
+      trig = [[;3]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[### ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
+  s(
+    {
+      trig = [[;4]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[#### ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
+  s(
+    {
+      trig = [[;5]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[##### ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
+  s(
+    {
+      trig = [[;6]],
+      snippetType = [[autosnippet]],
+    },
+    fmt(
+      [[###### ]],
+      {},
+      { delimiters = "<>" }
+    ),
+    {}
+  ),
 })
 
 
