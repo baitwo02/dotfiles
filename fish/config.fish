@@ -8,3 +8,4 @@ set PATH $HOME/.local/bin $PATH
 set PATH $GOBIN $PATH
 
 alias "sudo" "sudo -E"
+alias "nano" "nvim"

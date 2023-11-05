@@ -32,7 +32,7 @@ local function is_inline_math()
 	local line = vim.api.nvim_get_current_line()
 	local cur_col = vim.fn.col(".")
 
-	for pre = cur_col-1, 1, -1 do
+	for pre = cur_col - 1, 1, -1 do
 		local prev_char = line:sub(pre, pre)
 		if prev_char == "$" then
 			prev_flag = 1
@@ -88,163 +88,154 @@ local in_mathzone = function()
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
-
 ls.add_snippets("all", {
-	s({ trig = "sm", snippetType = "autosnippet"}, { t({ "$" }), i(1), t({ "$" }) }, {}),
-	s({ trig = "mm", snippetType = "autosnippet"}, { t({ "$$" }), i(1), t({ "$$" }) }, {}),
+	s({ trig = "sm", snippetType = "autosnippet" }, { t({ "$" }), i(1), t({ "$" }) }, {}),
+	s({ trig = "mm", snippetType = "autosnippet" }, { t({ "$$" }), i(1), t({ "$$" }) }, {}),
+	s({
+		trig = [[//]],
+		snippetType = [[autosnippet]],
+		condition = in_math,
+		show_condition = in_math,
+	}, fmt([[\frac{<>}{<>}]], { i(1, "分子"), i(2, "分母") }, { delimiters = "<>" }), {}),
 	s(
 		{
-			trig = [[//]],
-      snippetType = [[autosnippet]],
+			trig = [[(%a)(%d)]],
+			regTrig = true,
+			wordTrig = false,
+			snippetType = "autosnippet",
 			condition = in_math,
 			show_condition = in_math,
 		},
-		fmt(
-			[[\frac{<>}{<>}]],
-			{ i(1, "分子"), i(2, "分母") },
-			{ delimiters = "<>" }
-		),
+		fmt([[<>_{<>}]], {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			f(function(_, snip)
+				return snip.captures[2]
+			end),
+		}, { delimiters = "<>" }),
 		{}
 	),
 	s(
 		{
-			trig = "(%a)(%d)",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
+			trig = [[(%a*)bb]],
+			regTrig = true,
+			wordTrig = false,
+			snippetType = [[autosnippet]],
 			condition = in_math,
 			show_condition = in_math,
 		},
-		fmt(
-      [[<>_{<>}]],
-			{
-        f( function(_, snip) return snip.captures[1] end ),
-        f( function(_, snip) return snip.captures[2] end ),
-      },
-			{ delimiters = "<>" }
-		),
+		fmt([[<>_{<>}]], {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			i(1),
+		}, { delimiters = "<>" }),
 		{}
 	),
 	s(
 		{
-			trig = ";a",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
+			trig = [[(%a*)pp]],
+			regTrig = true,
+			wordTrig = false,
+			snippetType = [[autosnippet]],
 			condition = in_math,
 			show_condition = in_math,
 		},
-		fmt(
-      [[\alpha]],
-			{},
-			{ delimiters = "<>" }
-		),
+		fmt([[<>^{<>}]], {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			i(1),
+		}, { delimiters = "<>" }),
+		{}
+	),
+	s({
+		trig = ";a",
+		regTrig = true,
+		wordTrig = false,
+		snippetType = "autosnippet",
+		condition = in_math,
+		show_condition = in_math,
+	}, fmt([[\alpha]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = ";b",
+		regTrig = true,
+		wordTrig = false,
+		snippetType = "autosnippet",
+		condition = in_math,
+		show_condition = in_math,
+	}, fmt([[\beta]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = ";g",
+		regTrig = true,
+		wordTrig = false,
+		snippetType = "autosnippet",
+		condition = in_math,
+		show_condition = in_math,
+	}, fmt([[\gamma]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = ";m",
+		regTrig = true,
+		wordTrig = false,
+		snippetType = "autosnippet",
+		condition = in_math,
+		show_condition = in_math,
+	}, fmt([[\mu]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;1]],
+		snippetType = [[autosnippet]],
+	}, fmt([[# ]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;2]],
+		snippetType = [[autosnippet]],
+	}, fmt([[## ]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;3]],
+		snippetType = [[autosnippet]],
+	}, fmt([[### ]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;4]],
+		snippetType = [[autosnippet]],
+	}, fmt([[#### ]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;5]],
+		snippetType = [[autosnippet]],
+	}, fmt([[##### ]], {}, { delimiters = "<>" }), {}),
+	s({
+		trig = [[;6]],
+		snippetType = [[autosnippet]],
+	}, fmt([[###### ]], {}, { delimiters = "<>" }), {}),
+	s(
+		{
+			trig = [[(%a*)bb]],
+			regTrig = true,
+			wordTrig = false,
+		},
+		fmt([[<><><><>]], {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			t([[<sub>]]),
+			i(1),
+			t([[</sub>]]),
+		}, { delimiters = "<>" }),
 		{}
 	),
 	s(
 		{
-			trig = ";b",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
-			condition = in_math,
-			show_condition = in_math,
+			trig = [[(%a*)pp]],
+			regTrig = true,
+			wordTrig = false,
 		},
-		fmt(
-      [[\beta]],
-			{},
-			{ delimiters = "<>" }
-		),
+		fmt([[<><><><>]], {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			t([[<sup>]]),
+			i(1),
+			t([[</sup>]]),
+		}, { delimiters = "<>" }),
 		{}
 	),
-	s(
-		{
-			trig = ";g",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
-			condition = in_math,
-			show_condition = in_math,
-		},
-		fmt(
-      [[\gamma]],
-			{},
-			{ delimiters = "<>" }
-		),
-		{}
-	),
-  s(
-    {
-      trig = [[;1]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[# ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
-  s(
-    {
-      trig = [[;2]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[## ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
-  s(
-    {
-      trig = [[;3]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[### ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
-  s(
-    {
-      trig = [[;4]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[#### ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
-  s(
-    {
-      trig = [[;5]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[##### ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
-  s(
-    {
-      trig = [[;6]],
-      snippetType = [[autosnippet]],
-    },
-    fmt(
-      [[###### ]],
-      {},
-      { delimiters = "<>" }
-    ),
-    {}
-  ),
 })
-
-

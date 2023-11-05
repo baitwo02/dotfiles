@@ -18,6 +18,7 @@ cfgs = [
     "waybar",
     "wofi",
     "nvim",
+    "fcitx5",
 ]
 for cfg in cfgs:
     os.system(f"rm -rf {path_cfg}/{cfg}")

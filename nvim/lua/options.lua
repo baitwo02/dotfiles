@@ -62,4 +62,4 @@ end
 -- vim.cmd [[set whichwrap+=<,>,[,],h,l]] -- 行间能左右跳转
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]) -- 自动回到上次退出的位置
-vim.cmd([[autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg]]) -- 设置背景透明
+-- vim.cmd([[autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg]]) -- 设置背景透明
