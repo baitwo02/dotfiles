@@ -8,7 +8,7 @@ local run_code = function()
   if filetype == "c" then
     vim.cmd([[ set splitright ]])
     vim.cmd([[ vsplit ]])
-    vim.cmd([[ term gcc -g % -o %< && time ./%< ]])
+    vim.cmd([[ term make run && time ./%< ]])
 
   elseif filetype == "lua" then
     vim.cmd([[ set splitright ]])
@@ -32,6 +32,9 @@ local run_code = function()
     vim.cmd([[ set splitright ]])
     vim.cmd([[ vsplit ]])
     vim.cmd([[ term time go run % ]])
+
+  elseif filetype == "typ" then 
+    vim.cmd([[ term time make run ]])
 
   end
 end
