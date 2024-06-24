@@ -1,0 +1,5 @@
+#include "hanoi-r.c"
+
+int main() {
+  hanoi(3, 'a', 'b', 'c');
+}

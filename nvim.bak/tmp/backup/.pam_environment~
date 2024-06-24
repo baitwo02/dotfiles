@@ -1,0 +1,9 @@
+EDITOR=nvim
+VISUAL=nvim
+XMODIFIERS=@im=fcitx5
+XMODIFIERS=@im=fcitx
+QT_IM_MODULE=fcitx
+GTK_IM_MODULE=wayland
+
+# GBM_BACKEND=nvidia-drm
+# __GLX_VENDOR_LIBRARY_NAME=nvidia

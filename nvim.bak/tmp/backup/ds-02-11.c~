@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void print_list(int *list, int size) {
+  printf("[");
+  for (int i=0; i<size; i++) {
+    printf("%d, ", list[i]);
+  }
+  printf("\b\b]\n");
+}
+
+int find_mid(int *list1, int *list2, int size) {
+  int ans, mid_list1, mid_list2;
+  int s1=0, d1=size-1, m1, s2=0, d2=size-1, m2;
+  while (s1 != d1 && s2 != d2) {
+    m1 = (s1 + d1) / 2;
+    m2 = (s2 + d2) / 2;
+    mid_list1 = list1[m1];
+    mid_list2 = list2[m2];
+    if (mid_list1 == mid_list2) {
+      ans = mid_list1;
+      return ans;
+    } else if (mid_list1 < mid_list2) {
+      if ((s1 + s2)/2 % 2 == 0) {
+        s1 = m1 + 1;
+        d2 = m2;
+      } else {
+        s1 = m1;
+        d2 = m2;
+      }
+    } else if (mid_list1 > mid_list2) {
+      if ((s1 + d1)/2 %2 == 0) {
+        d1 = m1;
+        s2 = m2 + 1;
+      } else {
+        d1 = m1;
+        s2 = m2;
+      }
+    }
+    printf("list[%d] = %d, list2[%d] = %d\n", m1, list1[m1], m2, list2[m2]);
+  }
+  return list1[s1]<list2[s2] ? list1[s1]:list2[s2];
+}
+
+int main() {
+  int length=10;
+  int list1[length];
+  int list2[length];
+  int num=0;
+  int count=0, count1=0, count2=0;
+  while (count < length*2) {
+    srand((unsigned)time(NULL));
+    if (rand()%3 == 1 && count1<length) {
+      list1[count1] = num;
+      count++;
+      count1++;
+    }
+    if (rand()%3 == 2 && count2<length) {
+      list2[count2] = num;
+      count++;
+      count2++;
+    }
+    num++;
+  }
+  print_list(list1, length);
+  print_list(list2, length);
+  int mid_num = find_mid(list1, list2, length);
+  printf("%d\n", mid_num);
+}
+

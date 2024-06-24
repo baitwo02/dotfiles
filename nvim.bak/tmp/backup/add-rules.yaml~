@@ -1,0 +1,3 @@
+prepend-rules:
+  - IP-CIDR,8.217.177.207/8,DIRECT
+  - DOMAIN-KEYWORD,njust,DIRECT

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM茶馆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>STEM茶馆</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">服务项目</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>欢迎来到STEM茶馆</h2>
+        <p>探索科技与自然的完美融合。</p>
+    </section>
+    
+    <section id="about">
+        <h2>关于我们</h2>
+        <p>在STEM茶馆，我们相信学习可以在任何地方发生，包括一杯茶的温暖陪伴中。</p>
+    </section>
+    
+    <section id="services">
+        <h2>服务项目</h2>
+        <p>我们提供精选的茶饮和定期举办的STEM相关活动。</p>
+    </section>
+
+    <section>
+      <h2>高锰酸钾制备氧气</h2>
+      <p>2KMnO<sub>4</sub> = K<sub>2</sub>MnO<sub>4</sub> + MnO<sub>2</sub> + O<sub>2</sub></p>
+    </section>
+    
+    <section id="contact">
+        <h2>联系方式</h2>
+        <p>来访地址：[具体地址]</p>
+        <p>电子邮件：<a href="mailto:info@stemteahouse.com">info@stemteahouse.com</a></p>
+    </section>
+    
+    <footer>
+        <p>© 2024 STEM茶馆 - 探索科学的乐趣。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+

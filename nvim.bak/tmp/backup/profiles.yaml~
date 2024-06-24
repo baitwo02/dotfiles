@@ -1,0 +1,34 @@
+# Profiles Config for Clash Verge
+
+current: lsIn1iVll56G
+chain: null
+valid:
+- dns
+items:
+- uid: rM5XtlrCNBDd
+  type: remote
+  name: 飞鸟云
+  file: rM5XtlrCNBDd.yaml
+  desc: 飞鸟云
+  url: https://feiniaoyun.net/api/v1/client/subscribe?token=ac194e187055098a87b55b11cb03e394
+  selected:
+  - name: GLOBAL
+    now: 新加坡|02直连2
+  - name: 飞鸟云
+    now: 新加坡|02直连2
+  extra:
+    upload: 866461503
+    download: 49595195527
+    total: 644245094400
+    expire: 0
+  updated: 1699098005
+  option:
+    with_proxy: false
+    self_proxy: true
+    update_interval: 1440
+- uid: lsIn1iVll56G
+  type: local
+  name: myproxy
+  file: lsIn1iVll56G.yaml
+  desc: ''
+  updated: 1699098986

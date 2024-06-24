@@ -1,5 +1,0 @@
-require("dap-conf.nvim-dap-breakpoints")
-require("dap-conf.nvim-dap")
-require("dap-conf.nvim-dap-ui")
-require("dap-conf.nvim-dap-virtual-text")
-require("dap-conf.nvim-dap-mason")

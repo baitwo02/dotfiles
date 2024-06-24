@@ -1,0 +1,44 @@
+package todo
+
+import (
+  "fmt"
+  "os"
+  "log"
+
+  "github.com/pelletier/go-toml"
+)
+
+type Task struct {
+	Task      string
+	Completed bool
+	Week      int `toml:",omitempty"` // 只有周任务时设置
+	Day       int `toml:",omitempty"` // 只有日任务时设置
+}
+
+type Tasks struct {
+	Monthly []Task
+	Weekly  [][]Task
+	Daily   [][]Task
+}
+
+type Config struct {
+	Tasks Tasks
+}
+
+func Get_tasks() {
+	config := &Config{}
+	tomlFile, err := os.Open("example.toml")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tomlFile.Close()
+
+	decoder := toml.NewDecoder(tomlFile)
+	err = decoder.Decode(config)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("Config: %+v\n", config)
+}
+

@@ -1,0 +1,18 @@
+local wezterm = require("wezterm")
+local module = {}
+
+local function private_helper()
+  wezterm.log_error("hello!")
+end
+
+function module.apply_to_config(config)
+  private_helper()
+  config.font_size = 15
+  config.font = wezterm.font("Hack Nerd Font")
+  config.color_scheme = "Batman"
+  -- config.color_scheme = "C64"
+  config.use_fancy_tab_bar = true
+  config.window_background_opacity = 0.8
+end
+
+return module
