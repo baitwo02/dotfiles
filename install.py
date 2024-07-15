@@ -1,6 +1,5 @@
 import os
 
-# 创建软链
 path_homoe = os.environ["HOME"]
 user_name  = os.environ["LOGNAME"]
 
@@ -11,13 +10,12 @@ cfgs = [
     "kwalletrc",
     "fish",
     "kitty",
-    "alacritty",
     "hypr",
     "waybar",
-    "wofi",
-    "nvim",
     "yazi",
 ]
+
+# 创建软链
 for cfg in cfgs:
     os.system(f"rm -rf {path_cfg}/{cfg}")
     os.symlink(f"{path_dot}/{cfg}", f"{path_cfg}/{cfg}")

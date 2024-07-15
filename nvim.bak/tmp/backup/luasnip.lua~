@@ -1,9 +1,0 @@
-require("luasnip.config").setup({ enable_autosnippets = true })
-
-local path_config = vim.fn.stdpath("config") .. "/my-snippets"
--- snippets/<ft>.snippets and snippets/<ft>/*.snippets
-require("luasnip.loaders.from_snipmate").lazy_load(path_config .. "/snippets")
-
--- luasnippets/<ft>.snippets and luasnippets/<ft>/*.snippets
-require("luasnip.loaders.from_lua").lazy_load(path_config .. "/luasnippets")
-
