@@ -130,13 +130,13 @@
     },
     "custom/launcher":{
         "format": "",
-        "on-click": "anyrun",
-        "on-click-right": "killall anyrun"
+        "on-click": "fuzzel",
+        "on-click-right": "killall fuzzel"
     },
     "custom/power":{
         "format": " ",
-        "on-click": "bash ~/.config/rofi/leave/powermenu.sh",
-        "on-click-right": "killall anyrun"
+        "on-click": "wlogout",
+        "on-click-right": "killall fuzzel"
     },
     "custom/updater":{
         "format": "󰚰  {} Updates",

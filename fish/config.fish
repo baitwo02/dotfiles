@@ -11,3 +11,4 @@ set PATH $CARGOBIN $PATH
 
 alias "sudo" "sudo -E"
 alias "nano" "nvim"
+

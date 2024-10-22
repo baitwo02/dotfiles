@@ -7,8 +7,8 @@
 }
 
 window#waybar {
-  background-color: rgba(9, 208, 190, 0.4);
-  border-bottom: 3px solid rgba(0, 191, 255, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
+  border-bottom: 3px solid rgba(190, 130, 250, 0.4);
   transition-property: background-color;
   transition-duration: 0.5s;
   margin: 0 10px;
@@ -21,29 +21,29 @@ window#waybar.hidden {
 
 #workspaces button {
   padding: 0 8px;
-  background: rgba(9, 208, 190, 0.4);
+  background: rgba(225, 187, 247, 0.4);
   color: #ffffff;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #workspaces button.active {
-  background: rgba(0, 191, 255, 0.4);
+  background: rgba(190, 130, 250, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #workspaces button:hover {
-  background: rgba(0, 191, 255, 0.4);
+  background: rgba(190, 130, 250, 0.4);
   color: #000000;
   border-bottom: 3px solid #ffffff;
 }
 
 #workspaces button.focused {
-  background: rgba(9, 208, 190, 0.4);
+  background: rgba(225, 187, 247, 0.4);
 }
 
 #workspaces button.focused:hover {
-  background: rgba(0, 191, 255, 0.4);
+  background: rgba(190, 130, 250, 0.4);
   color: #000000;
   border-bottom: 3px solid #ffffff;
 }
@@ -53,11 +53,12 @@ window#waybar.hidden {
 }
 
 #mode {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   border-bottom: 3px solid #ffffff;
 }
 
 #clock,
+#custom-clock,
 #battery,
 #cpu,
 #memory,
@@ -74,13 +75,13 @@ window#waybar.hidden {
 #mpd {
   padding: 0 10px;
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #custom-launcher {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   font-size: 18px;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
   padding: 0 11px 0 5px;
 }
 
@@ -90,42 +91,49 @@ window#waybar.hidden {
 }
 
 #tray {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   padding: 5px;
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #tray > .passive {
   -gtk-icon-effect: dim;
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
 }
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
 }
 
 #clock {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
+  margin-right: 0;
+}
+
+#custom-clock {
+  background-color: rgba(225, 187, 247, 0.4);
+  color: #000000;
+  border: 1px solid rgba(190, 130, 250, 0.4);
   margin-right: 0;
 }
 
 #battery {
   background-color: #ffffff;
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #battery.charging,
 #battery.plugged {
   color: #ffffff;
   background-color: #26a65b;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 @keyframes blink {
@@ -143,7 +151,7 @@ window#waybar.hidden {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 label:focus {
@@ -151,119 +159,119 @@ label:focus {
 }
 
 #cpu {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #memory {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #disk {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #backlight {
-  background-color: rgba(9, 208, 190, 0.4);
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #network {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #network.disconnected {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: red;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #pulseaudio {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #pulseaudio.muted {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: red;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #custom-media {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
   margin-right: 0;
 }
 
 #custom-media.custom-spotify {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
   margin-right: 0;
 }
 
 #custom-media.custom-vlc {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
   margin-right: 0;
 }
 
 #custom-power {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   font-size: 16px;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #custom-updater {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #temperature {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #temperature.critical {
   background-color: #eb4d4b;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #idle_inhibitor {
-  background-color: rgba(9, 208, 190, 0.4);
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #idle_inhibitor.activated {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #language {
-  background-color: rgba(9, 208, 190, 0.4);
+  background-color: rgba(225, 187, 247, 0.4);
   color: #000000;
   min-width: 16px;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #keyboard-state {
-  background: rgba(9, 208, 190, 0.4);
+  background: rgba(225, 187, 247, 0.4);
   color: #000000;
   min-width: 16px;
-  border: 1px solid rgba(0, 191, 255, 0.4);
+  border: 1px solid rgba(190, 130, 250, 0.4);
 }
 
 #keyboard-state > label {
@@ -273,4 +281,3 @@ label:focus {
 #keyboard-state > label.locked {
   background: rgba(0, 0, 0, 0.2);
 }
-

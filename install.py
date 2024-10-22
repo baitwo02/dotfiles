@@ -13,6 +13,7 @@ cfgs = [
     "hypr",
     "waybar",
     "yazi",
+    "wezterm",
 ]
 
 # 创建软链
