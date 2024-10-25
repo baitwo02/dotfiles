@@ -6,8 +6,8 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
-config.color_scheme = 'AdventureTime'
-config.window_background_opacity = 0.7
+-- config.color_scheme = 'AdventureTime'
+config.window_background_opacity = 0.6
 config.font = wezterm.font 'Hack Nerd Font Mono'
 config.font_size = 14
 
