@@ -130,13 +130,11 @@
     },
     "custom/launcher":{
         "format": "",
-        "on-click": "fuzzel",
-        "on-click-right": "killall fuzzel"
+        "on-click": "killall fuzzel || fuzzel",
     },
     "custom/power":{
         "format": " ",
         "on-click": "wlogout",
-        "on-click-right": "killall fuzzel"
     },
     "custom/updater":{
         "format": "󰚰  {} Updates",
