@@ -3,17 +3,17 @@
     "position": "top",
     "height": 35,
     "spacing": 4,
-    "margin-top": 4,
+    "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 4,
-    "margin-right": 4,
+    "margin-left": 20,
+    "margin-right": 20,
 
     // Choose the order of the modules
 
     // "modules-left": ["custom/launcher", "hyprland/workspaces"],
     // "modules-center": ["tray"],
     // "modules-right": ["custom/media", "idle_inhibitor",  "custom/updater", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "custom/power"],
-    "modules-center": ["custom/launcher", "hyprland/workspaces", "tray", "idle_inhibitor",  "custom/updater", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "custom/power"],
+    "modules-center": ["custom/launcher", "hyprland/workspaces", "tray", "custom/clipboard","idle_inhibitor",  "custom/updater", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "custom/power"],
 
     // Modules configuration
 
@@ -133,7 +133,7 @@
         "on-click": "killall fuzzel || fuzzel",
     },
     "custom/power":{
-        "format": " ",
+        "format": "",
         "on-click": "wlogout",
     },
     "custom/updater":{
@@ -142,5 +142,9 @@
         "exec-if": "[[ $(yay -Qu | wc -l) != 0 ]]",
         "interval": 15,
         "on-click": "kitty -e yay -Syu"
+    },
+    "custom/clipboard":{
+        "format": "",
+        "on-click": "alacritty --class clipse -e clipse"
     }
 }
