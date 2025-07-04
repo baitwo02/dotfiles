@@ -5,8 +5,8 @@
     "spacing": 4,
     "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 20,
-    "margin-right": 20,
+    "margin-left": 2,
+    "margin-right": 2,
 
     // Choose the order of the modules
 
