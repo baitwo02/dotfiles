@@ -1,12 +1,12 @@
 {
     "layer": "bottom",
     "position": "top",
-    "height": 35,
+    "height": 30,
     "spacing": 4,
     "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 2,
-    "margin-right": 2,
+    "margin-left": 10,
+    "margin-right": 10,
 
     // Choose the order of the modules
 
@@ -114,7 +114,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol-qt"
+        "on-click": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",
